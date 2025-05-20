@@ -1,0 +1,145 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('koatcoffebg.webp') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: white;
+  overflow-x: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.left, .right {
+  padding: 5px 10px;
+}
+
+.icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-left: 16px;
+  border-radius: 50%;
+}
+
+.circle-bg {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(91, 86, 86, 0.656);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.content {
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.link-button {
+  background-color: white;
+  color: #fe6600;
+  border-radius: 30px;
+  height: 60px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.link-button:focus,
+.link-button:active,
+.link-button:visited {
+  outline: none;
+  color: #fe6600 !important;
+  background-color: white !important;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+.link-button:hover {
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #fe6600;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.location-scroll{
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 1rem;
+}
+
+.card {
+  padding: 10px;
+  width: 250px;
+  height: 275px;
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.card p{
+  color: #fe6600;
+  font-weight: 600;
+  margin-top: 2rem;
+  text-align: left;
+  font-size: medium;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ellipsis-icon {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  color: #fe6600;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+a:hover i {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}

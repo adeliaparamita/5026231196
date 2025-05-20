@@ -43,3 +43,50 @@ Route::get('blog', function () {
 
 Route::get('hello',[Coba::class, 'helloword']);
 //Route::get('hello','App\Http\Controllers\Coba@helloword)
+
+//pertemuan 1
+Route::get('pertama', function() {
+    return view('pertama');
+});
+
+//pertemuan 3
+Route::get('bootstrap1', function() {
+    return view('bootstrap1');
+});
+
+Route::get('bootstrap2', function() {
+    return view('bootstrap2');
+});
+
+//pertemuan 4 Latihan Layout Kode Soal 8
+Route::get('halamanlogin', function() {
+    return view('halamanlogin');
+});
+
+//Linktree
+Route::get('linktree', function() {
+    return view('linktree');
+});
+
+//Pertemuan 7
+Route::get('js1', function() {
+    return view('js1');
+});
+
+Route::get('js2', function() {
+    return view('js2');
+});
+
+//Danantara
+Route::get('indexdanantara', function() {
+    return view('indexdanantara');
+});
+
+//ETS
+Route::get('index', function() {
+    return view('index');
+});
+
+Route::get('frontend', function() {
+    return view('frontend');
+});
