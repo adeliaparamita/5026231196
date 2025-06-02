@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
-
+use App\Http\Controllers\PegawaiDBController;
 //kalo di java use itu mirip import
 //import java.io.*;
 
@@ -85,8 +85,8 @@ Route::get('indexdanantara', function() {
 });
 
 //ETS
-Route::get('index', function() {
-    return view('index');
+Route::get('ets', function() {
+    return view('ets');
 });
 
 //Frontend kumpulan file pertemuan 1 hingga ets
@@ -96,13 +96,30 @@ Route::get('frontend', function() {
 
 Route::get('dosen',[Coba::class, 'index']);
 
-Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
+//Route::get('/pegawai/{nama}', [PegawaiController::class, 'index']);
 
-Route::get('/formulir', [PegawaiController::class, 'formulir']); //ini adalah bagian halaman isian formulir
-Route::post('/formulir/proses', [PegawaiController::class, 'proses']); //redirect atau action form
+//Route::get('/formulir', [PegawaiController::class, 'formulir']); //ini adalah bagian halaman isian formulir
+//Route::post('/formulir/proses', [PegawaiController::class, 'proses']); //redirect atau action form
 
 // route blog
 Route::get('/blog', [BlogController::class, 'home']);
 Route::get('/blog/tentang', [BlogController::class, 'tentang']);
 Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
+//sqlnyaaa
+Route::get('/pegawai', [PegawaiDBController::class,'index']);
+
+//tutorial 10 malasngoding bagian Menginput Data Ke Database Dengan Laravel
+Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
+
+//tutorial 10 malasngoding bagian tampilan Data di store Database Dengan Laravel
+Route::post('/pegawai/store', [PegawaiController::class, 'store']);
+
+//tutorial 11 malasngoding bagian mengedit data
+Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
+
+//tutorial 11 malasngoding bagian update data
+Route::post('/pegawai/update', [PegawaiController::class, 'update']);
+
+//tutorial 11 malasngoding bagian hapus data
+Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
