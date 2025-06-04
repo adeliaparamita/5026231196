@@ -123,3 +123,6 @@ Route::post('/pegawai/update', [PegawaiController::class, 'update']);
 
 //tutorial 11 malasngoding bagian hapus data
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
+
+//bagian pencarian
+Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);

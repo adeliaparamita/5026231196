@@ -46,8 +46,19 @@ class PegawaiController extends Controller
         return redirect('/pegawai');
     }
 
+/*     public function proses(Request $request)
+    {
+        $this->validate($request,[
+           'nama' => 'required|min:5|max:20',
+           'pekerjaan' => 'required',
+           'usia' => 'required|numeric'
+        ]);
+
+        return view('proses',['data' => $request]);
+    } */
+
     // method untuk edit data pegawai
-    public function edit($id){
+    public function edit($id){ //ada primary key makanya ga pake dolar request
         // mengambil data pegawai berdasarkan id yang dipilih
         $pegawai = DB::table('pegawai')->where('pegawai_id',$id)->get();
         // passing data pegawai yang didapat ke view edit.blade.php
@@ -67,7 +78,7 @@ class PegawaiController extends Controller
         return redirect('/pegawai');
     }
 
-    // method untuk hapus data pegawai
+    //function untuk hapus data pegawai
     public function hapus($id){
         // menghapus data pegawai berdasarkan id yang dipilih
         DB::table('pegawai')->where('pegawai_id',$id)->delete();
@@ -75,4 +86,18 @@ class PegawaiController extends Controller
         // alihkan halaman ke halaman pegawai
         return redirect('/pegawai');
     }
+
+    //function untuk cari
+    public function cari(Request $request){
+		// menangkap data pencarian
+		$cari = $request->cari;
+
+    	// mengambil data dari table pegawai sesuai pencarian data
+		$pegawai = DB::table('pegawai')
+		->where('pegawai_nama','like',"%".$cari."%")
+		->paginate();
+
+    	// mengirim data pegawai ke view index
+		return view('index',['pegawai' => $pegawai]);
+	}
 }
