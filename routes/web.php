@@ -5,6 +5,7 @@ use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\KulkasController;
 //kalo di java use itu mirip import
 //import java.io.*;
 
@@ -126,3 +127,25 @@ Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 
 //bagian pencarian
 Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
+
+//Bagian tugas membuat tabel sesuai pembagian
+//tugas pertemuan 14 membuat tabel kulkas
+Route::get('/kulkas', [KulkasController::class, 'indexkulkas']);
+
+//Menginput Data Ke Database Dengan Laravel
+Route::get('/kulkas/tambahkulkas', [KulkasController::class, 'tambahkulkas']);
+
+//Menampilkan Data di store Database Dengan Laravel
+Route::post('/kulkas/storekulkas', [KulkasController::class, 'storekulkas']);
+
+//Mengedit data kulkas
+Route::get('/kulkas/editkulkas/{id}', [KulkasController::class, 'editkulkas']);
+
+//bagian update data kulkas
+Route::post('/kulkas/updatekulkas', [KulkasController::class, 'updatekulkas']);
+
+//bagian hapus data kulkas
+Route::get('/kulkas/hapuskulkas/{id}', [KulkasController::class, 'hapuskulkas']);
+
+//bagian pencarian kulkas
+Route::get('/kulkas/carikulkas', [KulkasController::class, 'carikulkas']);
