@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\KulkasController;
+use App\Http\Controllers\KeranjangBelanjaController;
 //kalo di java use itu mirip import
 //import java.io.*;
 
@@ -149,3 +150,17 @@ Route::get('/kulkas/hapuskulkas/{id}', [KulkasController::class, 'hapuskulkas'])
 
 //bagian pencarian kulkas
 Route::get('/kulkas/carikulkas', [KulkasController::class, 'carikulkas']);
+
+//Bagian tugas membuat tabel pertemuan 15 "keranjangbelanja"
+//tugas pertemuan 15 membuat tabel keranjangbelanja
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'indexkeranjangbelanja']);
+
+//Menginput Data Ke Database Dengan Laravel
+Route::get('/keranjangbelanja/tambahkeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'tambahkeranjangbelanja']);
+
+//Menampilkan Data di store Database Dengan Laravel
+Route::post('/keranjangbelanja/storekeranjangbelanja', [KeranjangBelanjaController::class, 'storekeranjangbelanja']);
+
+//bagian hapus data keranjangbelanja
+Route::get('/keranjangbelanja/hapuskeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'hapuskeranjangbelanja']);
+
