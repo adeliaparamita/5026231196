@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\KulkasController;
 use App\Http\Controllers\KeranjangBelanjaController;
+use App\Http\Controllers\PagecounterController;
+use App\Http\Controllers\KaryawanController;
 //kalo di java use itu mirip import
 //import java.io.*;
 
@@ -87,8 +89,8 @@ Route::get('indexdanantara', function() {
 });
 
 //ETS
-Route::get('ets', function() {
-    return view('ets');
+Route::get('indexets', function() {
+    return view('indexets');
 });
 
 //Frontend kumpulan file pertemuan 1 hingga ets
@@ -110,57 +112,52 @@ Route::get('/blog/kontak', [BlogController::class, 'kontak']);
 
 //sqlnyaaa
 Route::get('/pegawai', [PegawaiDBController::class,'index']);
-
 //tutorial 10 malasngoding bagian Menginput Data Ke Database Dengan Laravel
 Route::get('/pegawai/tambah', [PegawaiController::class, 'tambah']);
-
 //tutorial 10 malasngoding bagian tampilan Data di store Database Dengan Laravel
 Route::post('/pegawai/store', [PegawaiController::class, 'store']);
-
 //tutorial 11 malasngoding bagian mengedit data
 Route::get('/pegawai/edit/{id}', [PegawaiController::class, 'edit']);
-
 //tutorial 11 malasngoding bagian update data
 Route::post('/pegawai/update', [PegawaiController::class, 'update']);
-
 //tutorial 11 malasngoding bagian hapus data
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
-
 //bagian pencarian
 Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
 
 //Bagian tugas membuat tabel sesuai pembagian
 //tugas pertemuan 14 membuat tabel kulkas
 Route::get('/kulkas', [KulkasController::class, 'indexkulkas']);
-
 //Menginput Data Ke Database Dengan Laravel
 Route::get('/kulkas/tambahkulkas', [KulkasController::class, 'tambahkulkas']);
-
 //Menampilkan Data di store Database Dengan Laravel
 Route::post('/kulkas/storekulkas', [KulkasController::class, 'storekulkas']);
-
 //Mengedit data kulkas
 Route::get('/kulkas/editkulkas/{id}', [KulkasController::class, 'editkulkas']);
-
 //bagian update data kulkas
 Route::post('/kulkas/updatekulkas', [KulkasController::class, 'updatekulkas']);
-
 //bagian hapus data kulkas
 Route::get('/kulkas/hapuskulkas/{id}', [KulkasController::class, 'hapuskulkas']);
-
 //bagian pencarian kulkas
 Route::get('/kulkas/carikulkas', [KulkasController::class, 'carikulkas']);
 
 //Bagian tugas membuat tabel pertemuan 15 "keranjangbelanja"
 //tugas pertemuan 15 membuat tabel keranjangbelanja
 Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'indexkeranjangbelanja']);
-
 //Menginput Data Ke Database Dengan Laravel
 Route::get('/keranjangbelanja/tambahkeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'tambahkeranjangbelanja']);
-
 //Menampilkan Data di store Database Dengan Laravel
 Route::post('/keranjangbelanja/storekeranjangbelanja', [KeranjangBelanjaController::class, 'storekeranjangbelanja']);
-
 //bagian hapus data keranjangbelanja
 Route::get('/keranjangbelanja/hapuskeranjangbelanja/{id}', [KeranjangBelanjaController::class, 'hapuskeranjangbelanja']);
 
+//latihan tabel pagecounter pertemuan 15
+Route::get('/pagecounter', [PagecounterController::class,'indexpagecounter']);
+
+//latihan tabel karyawan pertemuan 15
+Route::get('/karyawan', [KaryawanController::class,'indexkaryawan']);
+Route::get('/karyawan/tambahkaryawan', [KaryawanController::class,'tambahkaryawan']);
+Route::post('/karyawan/storekaryawan', [KaryawanController::class,'storekaryawan']);
+Route::get('/karyawan/editkaryawan/{id}', [KaryawanController::class,'editkaryawan']);
+Route::post('/karyawan/updatekaryawan', [KaryawanController::class,'updatekaryawan']);
+Route::get('/karyawan/hapuskaryawan/{id}', [KaryawanController::class,'hapuskaryawan']);

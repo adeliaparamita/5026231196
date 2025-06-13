@@ -89,7 +89,7 @@
             <div class="card">
                 <h3>Evaluasi Tengah Semester</h3>
                     <p> ETS Pemrograman Web dengan Topik Company Profile</p>
-                <a href="http://127.0.0.1:8000/index"><i class="fa fa-plus"></i> Lihat File</a>
+                <a href="http://127.0.0.1:8000/indexets"><i class="fa fa-plus"></i> Lihat File</a>
             </div>
         </div>
         <!--Batas Kumpulan file fe-->
