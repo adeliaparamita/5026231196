@@ -36,7 +36,7 @@
                 <a class="nav-link" href="/kulkas">Tugas CRUD</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">EAS</a>
+                <a class="nav-link" href="/mykaryawan">EAS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/keranjangbelanja">Latihan 1</a>

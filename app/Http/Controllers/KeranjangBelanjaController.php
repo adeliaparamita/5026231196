@@ -11,8 +11,8 @@ class KeranjangBelanjaController extends Controller
     public function indexkeranjangbelanja()
     {
     	// mengambil data dari table keranjangbelanja
-    	//$keranjangbelanja = DB::table('keranjangbelanja')->get(); //array all record //get dan paginate tidak bisa dilakukan berbarengan
-        $keranjangbelanja = DB::table('keranjangbelanja')->paginate(10); //function paginate
+    	$keranjangbelanja = DB::table('keranjangbelanja')->get(); //array all record //get dan paginate tidak bisa dilakukan berbarengan
+        //$keranjangbelanja = DB::table('keranjangbelanja')->paginate(10); //function paginate, ga pake ini karena diminta tampilkan seluruh record di tabel sedangkan paginate di pecah beberapa halaman
     	// mengirim data keranjangbelanja ke view index
     	return view('indexkeranjangbelanja',['keranjangbelanja' => $keranjangbelanja]);
     }

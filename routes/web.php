@@ -9,6 +9,10 @@ use App\Http\Controllers\KulkasController;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\PagecounterController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\BelajarDoangController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\EasController;
+
 //kalo di java use itu mirip import
 //import java.io.*;
 
@@ -161,3 +165,17 @@ Route::post('/karyawan/storekaryawan', [KaryawanController::class,'storekaryawan
 Route::get('/karyawan/editkaryawan/{id}', [KaryawanController::class,'editkaryawan']);
 Route::post('/karyawan/updatekaryawan', [KaryawanController::class,'updatekaryawan']);
 Route::get('/karyawan/hapuskaryawan/{id}', [KaryawanController::class,'hapuskaryawan']);
+
+//belajar untuk eas dari soal th lalu
+Route::get('/belajardoang', [BelajarDoangController::class,'indexbelajardoang']);
+//belajar yang soal kategori
+Route::get('/kategori', [KategoriController::class, 'index']);
+Route::post('/kategori/kirim', [KategoriController::class, 'kirim']);
+//
+Route::get('/karyawan/view/{kodepegawai}', [KaryawanController::class,'view']);
+
+//lRoute untuk file eas
+Route::get('/eas', [EasController::class,'indexeas']);
+Route::get('/eas/editmykaryawan/{kodepegawai}', [EasController::class,'editmykaryawan']);
+Route::post('/eas/updatemykaryawan', [EasController::class,'updatemykaryawan']);
+Route::get('/eas/viewmykaryawan/{kodepegawai}', [EasController::class,'viewmykaryawan']);

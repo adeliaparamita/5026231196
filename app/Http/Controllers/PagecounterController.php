@@ -14,13 +14,10 @@ class PagecounterController extends Controller
         $jumlahpengunjung = 0;
         if($counter){
             $newjumlah =$counter-> Jumlah+1;
-            DB::table('pagecounter')
-            ->where('ID',1)
-            ->update(['Jumlah'=>$newjumlah]);
+            DB::table('pagecounter')->where('ID',1)->update(['Jumlah'=>$newjumlah]);
+            $jumlahpengunjung = $newjumlah;
         }
-        $jumlahpengunjung = $newjumlah;
          return view('indexpagecounter', ['jumlahpengunjung' => $jumlahpengunjung]);
-
     }
 
 }

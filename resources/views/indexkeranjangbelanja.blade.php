@@ -2,7 +2,8 @@
 
 @section('content')
 	<h3>Data Keranjang Belanja</h3>
-
+    <!--tombol beli hanya 1-->
+    <a href="/keranjangbelanja/tambahkeranjangbelanja" class= "btn btn-success">Beli</a>
  	<br/>
 
 	<table class="table table-striped  table-hover">
@@ -23,11 +24,10 @@
             <td>{{ number_format($p->Jumlah * $p->Harga, 0, ',', '.')}}</td>
 
 			<td>
-                <a href="/keranjangbelanja/tambahkeranjangbelanja/{{ $p->ID }} "class= "btn btn-success">Beli</a>
 				<a href="/keranjangbelanja/hapuskeranjangbelanja/{{ $p->ID }}"class= "btn btn-danger">Batal</a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-    {{$keranjangbelanja->links()}}
+    {{-- <!--gapake ini {{$keranjangbelanja->links()}}--> --}}
 @endsection

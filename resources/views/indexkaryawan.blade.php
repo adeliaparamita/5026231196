@@ -4,6 +4,25 @@
     <h3>Data Karyawan</h3>
 
     <br />
+    {{-- START: Tambahan Kode untuk Menampilkan Pesan SUKSES --}}
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    {{-- END: Tambahan Kode untuk Menampilkan Pesan SUKSES --}}
+
+    {{-- START: Tambahan Kode untuk Menampilkan Pesan ERROR --}}
+    {{-- Perhatikan: Validasi error unik (misal kodepegawai ganda) akan muncul di halaman 'tambahkaryawan' --}}
+    {{-- Namun, jika ada error lain yang Anda kirimkan ke session('error') dari controller, ini akan muncul di sini --}}
+    @if (session('error'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('error') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+    {{-- END: Tambahan Kode untuk Menampilkan Pesan ERROR --}}
 
     <table class="table table-striped">
         <tr>
@@ -20,16 +39,15 @@
                 <td>{{ $k->divisi }}</td>
                 <td>{{ strtolower($k->departemen) }}</td>
                 <td>
-                    <a href="/karyawan/editkaryawan/{{ $k->kodepegawai }}" class="btn btn-success">Edit</a>
+                    <a href="{{ url('/karyawan/view/' . $k->kodepegawai) }}" class="btn btn-info btn-sm">View</a>
                     <a href="/karyawan/hapuskaryawan/{{ $k->kodepegawai }}" class="btn btn-danger">Hapus Data</a>
                 </td>
             </tr>
         @endforeach
     </table>
 
-    <a href="/karyawan/tambahkaryawan" class="btn btn-primary btn-block"> Tambah Data</a>
+    <a href="/karyawan/tambahkaryawan" class="btn btn-primary btn-block"> Tambah Karyawan</a>
 
     <div class="mt-4">
-        {{ $karyawan->links() }}
     </div>
 @endsection
