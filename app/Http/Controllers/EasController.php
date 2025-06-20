@@ -36,7 +36,7 @@ class EasController extends Controller
             'departemen' => $request->departemen
         ]);
         // alihkan halaman ke halaman mykaryawan
-        return redirect('/mykaryawan');
+        return redirect('/eas');
     }
 
     public function viewmykaryawan($kodepegawai) {
